@@ -1,0 +1,345 @@
+/* ============================================================
+   Inventario Sebastian Vite — tema "libro de registro"
+   ============================================================ */
+
+:root {
+  --color-paper: #F7F2E7;
+  --color-paper-alt: #FFFFFF;
+  --color-ink: #1F2A44;
+  --color-ink-soft: #5B6B85;
+  --color-rule: #D9CFB4;
+  --color-accent: #2F7A6E;
+  --color-accent-dark: #235E55;
+  --color-warn: #C1553B;
+
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+
+  --radius: 4px;
+  --max-width: 960px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-paper);
+  background-image: repeating-linear-gradient(
+    var(--color-paper) 0px,
+    var(--color-paper) 34px,
+    var(--color-rule) 35px
+  );
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+a {
+  color: var(--color-accent-dark);
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+}
+
+/* ---------- Encabezado ---------- */
+
+.site-header {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  padding: var(--space-md) 0;
+  border-bottom: 4px double var(--color-accent);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.site-header h1 {
+  font-size: 1.6rem;
+}
+
+.site-header .subtitulo {
+  font-size: 0.85rem;
+  color: #B9C4D6;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.main-nav a {
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.main-nav a:hover {
+  border-color: var(--color-accent);
+}
+
+/* ---------- Contenido general ---------- */
+
+main {
+  padding: var(--space-lg) 0;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-xs);
+}
+
+.page-subtitle {
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Tarjetas de acceso (index) ---------- */
+
+.acciones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.accion-card {
+  flex: 1 1 280px;
+  background-color: var(--color-paper-alt);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: 0 2px 0 var(--color-rule);
+  transition: transform 0.2s ease;
+}
+
+.accion-card:hover {
+  transform: translateY(-3px);
+}
+
+.accion-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.accion-card p {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-accent-dark);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ---------- Formulario de registro ---------- */
+
+.formulario-registro {
+  background-color: var(--color-paper-alt);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  max-width: 560px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: var(--space-sm);
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.campo-error {
+  font-size: 0.78rem;
+  color: var(--color-warn);
+  min-height: 1em;
+}
+
+.campo.con-error input,
+.campo.con-error select,
+.campo.con-error textarea {
+  border-color: var(--color-warn);
+}
+
+/* ---------- Mensajes tipo "sello" ---------- */
+
+.mensaje-sello {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border: 2px dashed;
+  border-radius: var(--radius);
+  transform: rotate(-1deg);
+  margin-bottom: var(--space-md);
+}
+
+.mensaje-exito {
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent);
+  background-color: rgba(47, 122, 110, 0.08);
+}
+
+.mensaje-error {
+  color: var(--color-warn);
+  border-color: var(--color-warn);
+  background-color: rgba(193, 85, 59, 0.08);
+}
+
+/* ---------- Tabla de inventario ---------- */
+
+.tabla-wrap {
+  overflow-x: auto;
+  background-color: var(--color-paper-alt);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+}
+
+table.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-rule);
+  font-size: 0.9rem;
+}
+
+.tabla-productos th {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tabla-productos td.numero {
+  font-family: var(--font-mono);
+}
+
+.tabla-productos tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-productos tr:hover td {
+  background-color: var(--color-paper);
+}
+
+.tabla-vacia {
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--color-ink-soft);
+}
+
+.acciones-listar {
+  margin-top: var(--space-md);
+}
+
+/* ---------- Pie de pagina ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-rule);
+  padding: var(--space-md) 0;
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 720px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formulario-registro {
+    padding: var(--space-md);
+  }
+}
